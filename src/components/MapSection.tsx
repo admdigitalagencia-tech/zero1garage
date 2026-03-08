@@ -11,7 +11,7 @@ export default function MapSection({ t }: Props) {
           title="Zero1 Garage Location"
           src="https://maps.google.com/maps?q=3456+W+El+Segundo+Blvd+Hawthorne+CA+90250&output=embed"
           className="w-full border-0"
-          height={480}
+          height={460}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />

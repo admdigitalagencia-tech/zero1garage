@@ -10,41 +10,44 @@
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 100%;
-    --primary: 73 100% 49%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 41 66% 47%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 53%;
-    --accent: 73 100% 49%;
-    --accent-foreground: 0 0% 4%;
+    --muted-foreground: 0 0% 47%;
+    --accent: 41 66% 47%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 13%;
-    --input: 0 0% 13%;
-    --ring: 73 100% 49%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 41 66% 47%;
     --radius: 0px;
 
     /* Custom tokens */
     --bg-dark: 0 0% 4%;
-    --bg-light: 48 5% 94%;
+    --bg-light: 45 5% 93%;
+    --bg-light-alt: 45 4% 90%;
     --bg-mid: 0 0% 8%;
     --bg-strip: 0 0% 7%;
+    --gold: 41 66% 47%;
+    --silver: 0 0% 66%;
     --text-light: 0 0% 100%;
     --text-dark: 0 0% 4%;
-    --text-muted: 0 0% 53%;
-    --border-dark: 0 0% 13%;
+    --text-muted: 0 0% 47%;
+    --border-dark: 0 0% 12%;
     --border-subtle: 0 0% 12%;
     --whatsapp: 142 70% 49%;
 
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 94%;
-    --sidebar-primary: 73 100% 49%;
-    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-primary: 41 66% 47%;
+    --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 94%;
-    --sidebar-border: 0 0% 13%;
-    --sidebar-ring: 73 100% 49%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 41 66% 47%;
   }
 }
 
@@ -70,7 +73,7 @@
 @layer components {
   .overline {
     @apply uppercase tracking-[0.15em] text-[0.72rem] font-medium;
-    color: hsl(var(--accent));
+    color: hsl(var(--gold));
     font-family: 'IBM Plex Sans', sans-serif;
   }
   .section-dark {
