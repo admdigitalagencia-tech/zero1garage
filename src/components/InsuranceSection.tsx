@@ -1,3 +1,6 @@
+import repairImg from '@/assets/repair-section.jpg';
+import totalLossImg from '@/assets/about-team.jpg';
+
 interface Props {
   t: (key: string) => string;
 }
@@ -10,24 +13,29 @@ export default function InsuranceSection({ t }: Props) {
     <section id="seguros">
       {/* Insurance Management */}
       <div className="section-light py-20 md:py-28">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <p className="overline mb-3">{t('ins.overline')}</p>
-          <h2 className="font-display text-text-dark text-3xl md:text-5xl mb-6">{t('ins.headline')}</h2>
-          <p className="font-body text-text-muted font-light mb-6">{t('ins.body')}</p>
-          <ul className="space-y-2 mb-6">
-            {insBullets.map(b => (
-              <li key={b} className="font-body text-sm text-text-dark/80 flex items-start gap-2">
-                <span className="text-gold font-bold">→</span> {t(b)}
-              </li>
-            ))}
-          </ul>
-          <p className="font-body text-xs text-text-muted italic mb-6">{t('ins.note')}</p>
-          <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
-            {t('ins.cta')}
-          </a>
-          <div className="font-body text-xs text-text-muted space-y-1">
-            <p>📞 (424) 523-9244</p>
-            <p>✉️ zeroonegaragellc@gmail.com</p>
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img src={repairImg} alt="Insurance claim process" className="w-full h-[500px] object-cover" loading="lazy" />
+          </div>
+          <div>
+            <p className="overline mb-3">{t('ins.overline')}</p>
+            <h2 className="font-display text-text-dark text-3xl md:text-5xl mb-6">{t('ins.headline')}</h2>
+            <p className="font-body text-text-muted font-light mb-6">{t('ins.body')}</p>
+            <ul className="space-y-2 mb-6">
+              {insBullets.map(b => (
+                <li key={b} className="font-body text-sm text-text-dark/80 flex items-start gap-2">
+                  <span className="text-gold font-bold">→</span> {t(b)}
+                </li>
+              ))}
+            </ul>
+            <p className="font-body text-xs text-text-muted italic mb-6">{t('ins.note')}</p>
+            <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
+              {t('ins.cta')}
+            </a>
+            <div className="font-body text-xs text-text-muted space-y-1">
+              <p>📞 (424) 523-9244</p>
+              <p>✉️ zeroonegaragellc@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>
@@ -61,20 +69,25 @@ export default function InsuranceSection({ t }: Props) {
 
       {/* Total Loss */}
       <div className="bg-bg-mid py-20 md:py-28">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <p className="overline mb-3">{t('tl.overline')}</p>
-          <h2 className="font-display text-foreground text-3xl md:text-5xl mb-6">{t('tl.headline')}</h2>
-          <p className="font-body text-muted-foreground font-light mb-6">{t('tl.body')}</p>
-          <ul className="space-y-2 mb-8">
-            {tlBullets.map(b => (
-              <li key={b} className="font-body text-sm text-foreground/80 flex items-start gap-2">
-                <span className="text-gold font-bold">→</span> {t(b)}
-              </li>
-            ))}
-          </ul>
-          <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
-            {t('tl.cta')}
-          </a>
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="overline mb-3">{t('tl.overline')}</p>
+            <h2 className="font-display text-foreground text-3xl md:text-5xl mb-6">{t('tl.headline')}</h2>
+            <p className="font-body text-muted-foreground font-light mb-6">{t('tl.body')}</p>
+            <ul className="space-y-2 mb-8">
+              {tlBullets.map(b => (
+                <li key={b} className="font-body text-sm text-foreground/80 flex items-start gap-2">
+                  <span className="text-gold font-bold">→</span> {t(b)}
+                </li>
+              ))}
+            </ul>
+            <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
+              {t('tl.cta')}
+            </a>
+          </div>
+          <div>
+            <img src={totalLossImg} alt="Total loss vehicle in yard" className="w-full h-[450px] object-cover" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>

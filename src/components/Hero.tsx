@@ -1,3 +1,4 @@
+import heroBg from '@/assets/hero-bg.jpg';
 import { Star, MapPin, Phone, MessageCircle } from 'lucide-react';
 
 interface Props {
@@ -7,6 +8,12 @@ interface Props {
 export default function Hero({ t }: Props) {
   return (
     <section id="inicio" className="relative min-h-screen flex flex-col justify-center section-dark pt-[60px]">
+      {/* BG image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="Auto body shop" className="w-full h-full object-cover" loading="eager" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(11,11,11,0.95) 45%, rgba(11,11,11,0.3) 100%)' }} />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex-1 flex flex-col justify-center">
         <div className="max-w-[54%] max-lg:max-w-full">
