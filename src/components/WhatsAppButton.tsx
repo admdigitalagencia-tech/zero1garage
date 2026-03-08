@@ -4,8 +4,9 @@ export default function WhatsAppButton() {
       href="https://wa.me/14245239244"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-whatsapp rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-whatsapp rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform group"
       aria-label="WhatsApp"
+      title="Fale conosco no WhatsApp"
     >
       {/* Pulse ring */}
       <span className="absolute inset-0 rounded-full bg-whatsapp animate-pulse-ring" />
