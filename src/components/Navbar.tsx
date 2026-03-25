@@ -87,7 +87,7 @@ export default function Navbar({ t, lang, setLang }: Props) {
               </button>
             ))}
           </div>
-          <a href="tel:+14245239244" className="bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-7 py-3">
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-7 py-3">
             {t('nav.orcamento')}
           </a>
         </div>
