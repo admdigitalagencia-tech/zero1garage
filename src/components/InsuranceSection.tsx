@@ -46,7 +46,7 @@ export default function InsuranceSection({ t }: Props) {
           <p className="overline mb-4">{t('ded.overline')}</p>
           <h2 className="font-display text-foreground text-3xl md:text-5xl lg:text-6xl mb-6">{t('ded.headline')}</h2>
           <p className="font-body text-muted-foreground font-light mb-8 max-w-2xl mx-auto">{t('ded.body')}</p>
-          <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-6">
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-6">
             {t('ded.cta')}
           </a>
           <div className="mt-4">
