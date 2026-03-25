@@ -61,7 +61,7 @@ export default function Navbar({ t, lang, setLang }: Props) {
           </div>
 
           {/* CTA */}
-          <a href="tel:+14245239244" className="bg-gold text-primary-foreground font-bold uppercase tracking-widest text-xs px-5 py-2 hover:brightness-110 transition">
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="bg-gold text-primary-foreground font-bold uppercase tracking-widest text-xs px-5 py-2 hover:brightness-110 transition">
             {t('nav.orcamento')}
           </a>
         </div>
