@@ -29,7 +29,7 @@ export default function InsuranceSection({ t }: Props) {
               ))}
             </ul>
             <p className="font-body text-xs text-text-muted italic mb-6">{t('ins.note')}</p>
-            <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
+            <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
               {t('ins.cta')}
             </a>
             <div className="font-body text-xs text-text-muted space-y-1">
