@@ -13,7 +13,9 @@ export default function BodyShopSection({ t }: Props) {
         <div>
           <p className="overline mb-3">{t('body.overline')}</p>
           <h2 className="font-display text-foreground text-3xl md:text-5xl mb-6">{t('body.headline')}</h2>
-          <p className="font-body text-muted-foreground font-light mb-6">{t('body.body')}</p>
+          <div className="font-body text-muted-foreground font-light mb-6 whitespace-pre-line leading-relaxed">
+            {t('body.body')}
+          </div>
           <ul className="space-y-2 mb-8">
             {bullets.map(b => (
               <li key={b} className="font-body text-sm text-foreground/80 flex items-start gap-2">
@@ -21,7 +23,7 @@ export default function BodyShopSection({ t }: Props) {
               </li>
             ))}
           </ul>
-          <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
             {t('body.cta')}
           </a>
           <div className="font-body text-xs text-muted-foreground space-y-1">

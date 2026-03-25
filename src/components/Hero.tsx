@@ -21,13 +21,16 @@ export default function Hero({ t }: Props) {
           <h1 className="font-display text-foreground leading-[0.95] mb-6" style={{ fontSize: 'clamp(3rem, 8vw, 8rem)' }}>
             {t('hero.h1.1')}<br />
             {t('hero.h1.2')}<br />
-            {t('hero.h1.3')}
+            <span className="text-gold">{t('hero.h1.3')}</span>
           </h1>
-          <p className="font-body text-muted-foreground text-base max-w-[500px] mb-8 font-light leading-relaxed">
+          <p className="font-body text-muted-foreground text-base max-w-[500px] mb-4 font-light leading-relaxed whitespace-pre-line">
             {t('hero.sub')}
           </p>
+          <p className="font-body text-foreground text-sm font-medium tracking-wide mb-8">
+            {t('hero.support')}
+          </p>
           <div className="flex flex-wrap gap-4">
-            <a href="tel:+14245239244" className="bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
+            <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
               {t('hero.cta1')}
             </a>
             <a href="#processo" className="border-2 border-gold text-gold font-bold uppercase tracking-widest text-sm px-8 py-3 hover:bg-gold hover:text-primary-foreground transition-colors">

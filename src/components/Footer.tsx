@@ -35,7 +35,7 @@ export default function Footer({ t }: Props) {
           <h4 className="font-display text-foreground text-base mb-3">{t('footer.empresa')}</h4>
           <ul className="font-body text-xs text-muted-foreground space-y-2 font-light">
             <li><a href="#sobre" className="hover:text-gold transition-colors">{t('footer.historia')}</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">{t('footer.avaliacoes')}</a></li>
+            <li><a href="https://g.page/zero1garage" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t('footer.avaliacoes')}</a></li>
             <li><a href="https://www.instagram.com/zero1garage_usa/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{t('footer.instagram')}</a></li>
             <li><a href="mailto:zeroonegaragellc@gmail.com" className="hover:text-gold transition-colors">{t('footer.contato2')}</a></li>
           </ul>
@@ -57,7 +57,8 @@ export default function Footer({ t }: Props) {
       </div>
 
       <div className="container mx-auto px-4 mt-6 pt-6 border-t border-border">
-        <p className="font-body text-xs text-muted-foreground text-center font-light">{t('footer.copy')}</p>
+        <p className="font-body text-xs text-muted-foreground text-center font-light mb-2">{t('footer.copy')}</p>
+        <p className="font-body text-[10px] text-muted-foreground/60 text-center font-light italic max-w-2xl mx-auto">{t('footer.legal')}</p>
       </div>
     </footer>
   );

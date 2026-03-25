@@ -40,7 +40,7 @@ export default function ProcessSteps({ t }: Props) {
         </div>
 
         <div className="text-center mt-14">
-          <a href="tel:+14245239244" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
             {t('process.cta')}
           </a>
         </div>

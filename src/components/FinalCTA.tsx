@@ -10,15 +10,15 @@ export default function FinalCTA({ t }: Props) {
           {t('cta.overline')}
         </p>
         <h2 className="font-display text-primary-foreground text-4xl md:text-6xl lg:text-7xl mb-6">{t('cta.headline')}</h2>
-        <p className="font-body text-primary-foreground/80 max-w-2xl mx-auto mb-8 font-light">
+        <div className="font-body text-primary-foreground/90 max-w-2xl mx-auto mb-8 font-light whitespace-pre-line text-lg leading-relaxed">
           {t('cta.body')}
-        </p>
+        </div>
         <div className="flex flex-wrap gap-4 justify-center mb-6">
-          <a href="tel:+14245239244" className="bg-bg-dark text-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:bg-bg-mid transition-colors">
-            {t('cta.ligar')}
-          </a>
           <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="bg-bg-dark text-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:bg-bg-mid transition-colors">
             {t('cta.whatsapp')}
+          </a>
+          <a href="tel:+14245239244" className="bg-bg-dark text-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:bg-bg-mid transition-colors">
+            {t('cta.ligar')}
           </a>
         </div>
         <p className="font-body text-lg text-primary-foreground font-medium mb-2">(424) 523-9244</p>
