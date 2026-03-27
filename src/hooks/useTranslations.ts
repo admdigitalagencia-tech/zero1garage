@@ -147,6 +147,9 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Final CTA (Bloco Final + CTA)
   'cta.overline': { PT: 'RESOLVA ISSO AGORA', EN: 'RESOLVE THIS NOW', ES: 'RESUÉLVELO AHORA' },
+  'cta.check1': { PT: 'Sem franquia', EN: 'No deductible', ES: 'Sin deducible' },
+  'cta.check2': { PT: 'Sem burocracia', EN: 'No paperwork', ES: 'Sin burocracia' },
+  'cta.check3': { PT: 'Sem surpresa', EN: 'No surprises', ES: 'Sin sorpresas' },
   'cta.headline': { PT: 'RESOLVA ISSO AGORA.', EN: 'RESOLVE THIS NOW.', ES: 'RESUÉLVELO AHORA.' },
   'cta.body': { PT: 'Você não precisa ficar sem carro.\nVocê não precisa se preocupar com o seguro.\nVocê não precisa pagar franquia na maioria dos casos.\n\nAqui você resolve tudo em um só lugar.', EN: 'You don\'t have to go without a car.\nYou don\'t have to worry about insurance.\nYou don\'t have to pay the deductible in most cases.\n\nHere you resolve everything in one place.', ES: 'No tienes que quedarte sin auto.\nNo tienes que preocuparte por el seguro.\nNo tienes que pagar deducible en la mayoría de los casos.\n\nAquí resuelves todo en un solo lugar.' },
   'cta.whatsapp': { PT: 'FALAR NO WHATSAPP AGORA →', EN: 'CHAT ON WHATSAPP NOW →', ES: 'HABLAR POR WHATSAPP AHORA →' },

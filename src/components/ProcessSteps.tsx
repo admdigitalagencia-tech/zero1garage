@@ -1,4 +1,5 @@
-import { Car, FileText, Wrench, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Car, FileText, Wrench, CheckCircle, MessageCircle } from 'lucide-react';
 
 interface Props {
   t: (key: string) => string;
@@ -13,37 +14,60 @@ const steps = [
 
 export default function ProcessSteps({ t }: Props) {
   return (
-    <section id="processo" className="section-dark py-20 md:py-28">
+    <section id="processo" className="relative section-dark py-24 md:py-32 overflow-hidden">
+      <div className="watermark bottom-0 left-0 -translate-x-1/4">PROCESS</div>
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
           <p className="overline mb-3">{t('process.overline')}</p>
-          <h2 className="font-display text-foreground text-4xl md:text-6xl">{t('process.headline')}</h2>
-        </div>
+          <h2 className="font-display text-foreground text-4xl md:text-6xl lg:text-7xl">{t('process.headline')}</h2>
+        </motion.div>
 
         <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto relative">
-          {/* Decorative line */}
-          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gold/30" />
+          {/* Connecting line */}
+          <div className="hidden md:block absolute top-[52px] left-[12.5%] right-[12.5%] h-px">
+            <div className="w-full h-full bg-gradient-to-r from-gold/10 via-gold/40 to-gold/10" />
+          </div>
 
           {steps.map((s, i) => (
-            <div key={s.num} className="text-center relative">
-              <div className="relative inline-flex items-center justify-center w-16 h-16 border-2 border-gold mb-6 bg-bg-dark">
+            <motion.div
+              key={s.num}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              className="text-center relative"
+            >
+              <div className="relative inline-flex items-center justify-center w-[72px] h-[72px] border-2 border-gold mb-6 bg-bg-dark">
                 <s.icon size={28} className="text-gold" />
+                <span className="absolute -top-3 -right-3 bg-gold text-primary-foreground font-display text-sm w-7 h-7 flex items-center justify-center">
+                  {s.num}
+                </span>
               </div>
-              <div className="font-display text-gold text-lg mb-1">{s.num}</div>
-              <h3 className="font-display text-foreground text-xl mb-3">{t(s.title)}</h3>
-              <p className="font-body text-sm text-muted-foreground font-light">{t(s.desc)}</p>
-              {i < steps.length - 1 && (
-                <span className="hidden md:block absolute top-12 -right-4 text-gold text-xl">→</span>
-              )}
-            </div>
+              <h3 className="font-display text-foreground text-lg md:text-xl mb-3">{t(s.title)}</h3>
+              <p className="font-body text-sm text-muted-foreground font-light leading-relaxed">{t(s.desc)}</p>
+            </motion.div>
           ))}
         </div>
 
-        <div className="text-center mt-14">
-          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-center mt-16"
+        >
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="cta-whatsapp">
+            <MessageCircle size={18} />
             {t('process.cta')}
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

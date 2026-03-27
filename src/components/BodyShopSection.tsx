@@ -1,4 +1,5 @@
-import bodyImg from '@/assets/bodyshop-section.jpg';
+import { motion } from 'framer-motion';
+import { Shield, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface Props {
   t: (key: string) => string;
@@ -8,32 +9,59 @@ const bullets = ['body.b1', 'body.b2', 'body.b3', 'body.b4', 'body.b5', 'body.b6
 
 export default function BodyShopSection({ t }: Props) {
   return (
-    <section className="section-dark py-20 md:py-28">
-      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <p className="overline mb-3">{t('body.overline')}</p>
-          <h2 className="font-display text-foreground text-3xl md:text-5xl mb-6">{t('body.headline')}</h2>
-          <div className="font-body text-muted-foreground font-light mb-6 whitespace-pre-line leading-relaxed">
-            {t('body.body')}
+    <section className="relative section-light py-24 md:py-32 overflow-hidden">
+      <div className="watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-dark">ZER01</div>
+
+      <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center justify-center w-16 h-16 border-2 border-gold bg-gold/10 mb-6">
+            <Shield size={32} className="text-gold" />
           </div>
-          <ul className="space-y-2 mb-8">
-            {bullets.map(b => (
-              <li key={b} className="font-body text-sm text-foreground/80 flex items-start gap-2">
-                <span className="text-gold font-bold">→</span> {t(b)}
-              </li>
-            ))}
-          </ul>
-          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="inline-block bg-gold text-primary-foreground font-bold uppercase tracking-widest text-sm px-8 py-3 hover:brightness-110 transition mb-4">
+          <p className="overline mb-4">{t('body.overline')}</p>
+          <h2 className="font-display text-text-dark text-3xl md:text-5xl lg:text-6xl mb-8">{t('body.headline')}</h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="font-body text-text-muted font-light mb-10 text-lg leading-relaxed whitespace-pre-line max-w-2xl mx-auto"
+        >
+          {t('body.body')}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12 text-left"
+        >
+          {bullets.map((b) => (
+            <div key={b} className="flex items-start gap-3 bg-bg-light-alt p-4 border border-border-dark/10">
+              <CheckCircle size={18} className="text-gold mt-0.5 shrink-0" />
+              <span className="font-body text-sm text-text-dark/80">{t(b)}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+        >
+          <a href="https://wa.me/14245239244" target="_blank" rel="noopener noreferrer" className="cta-primary">
+            <ArrowRight size={18} />
             {t('body.cta')}
           </a>
-          <div className="font-body text-xs text-muted-foreground space-y-1">
-            <p>📞 (424) 523-9244</p>
-            <p>✉️ zeroonegaragellc@gmail.com</p>
-          </div>
-        </div>
-        <div>
-          <img src={bodyImg} alt="Professional paint booth" className="w-full h-[500px] object-cover" loading="lazy" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
