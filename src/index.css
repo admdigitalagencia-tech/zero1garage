@@ -15,13 +15,13 @@
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 47%;
+    --muted-foreground: 0 0% 55%;
     --accent: 41 66% 47%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
     --ring: 41 66% 47%;
     --radius: 0px;
 
@@ -32,13 +32,19 @@
     --bg-mid: 0 0% 8%;
     --bg-strip: 0 0% 7%;
     --gold: 41 66% 47%;
+    --gold-glow: 41 80% 55%;
     --silver: 0 0% 66%;
     --text-light: 0 0% 100%;
     --text-dark: 0 0% 4%;
-    --text-muted: 0 0% 47%;
-    --border-dark: 0 0% 12%;
-    --border-subtle: 0 0% 12%;
+    --text-muted: 0 0% 55%;
+    --border-dark: 0 0% 14%;
+    --border-subtle: 0 0% 14%;
     --whatsapp: 142 70% 49%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(41 66% 47%), hsl(41 80% 55%));
+    --shadow-gold: 0 8px 32px -8px hsl(41 66% 47% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 12px 40px -8px hsl(0 0% 0% / 0.6);
 
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 94%;
@@ -59,6 +65,8 @@
     @apply bg-background text-foreground;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   html {
     scroll-behavior: smooth;
@@ -88,6 +96,62 @@
     background-color: hsl(var(--bg-strip));
     color: hsl(var(--text-light));
   }
+
+  /* Premium CTA button */
+  .cta-primary {
+    @apply inline-flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300;
+    background: var(--gradient-gold);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-gold);
+  }
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px hsl(41 66% 47% / 0.5);
+    filter: brightness(1.1);
+  }
+
+  .cta-secondary {
+    @apply inline-flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300;
+    border: 2px solid hsl(var(--gold));
+    color: hsl(var(--gold));
+    background: transparent;
+  }
+  .cta-secondary:hover {
+    background: hsl(var(--gold));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-2px);
+  }
+
+  .cta-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300;
+    background: hsl(var(--whatsapp));
+    color: white;
+    box-shadow: 0 8px 32px -8px hsl(142 70% 49% / 0.4);
+  }
+  .cta-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px hsl(142 70% 49% / 0.5);
+    filter: brightness(1.1);
+  }
+
+  /* Watermark */
+  .watermark {
+    @apply absolute font-display text-foreground pointer-events-none select-none;
+    opacity: 0.02;
+    font-size: clamp(8rem, 20vw, 24rem);
+    white-space: nowrap;
+  }
+
+  /* Premium card */
+  .premium-card {
+    @apply border border-border bg-card p-8 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  .premium-card:hover {
+    border-color: hsl(var(--gold) / 0.3);
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+  }
 }
 
 @keyframes pulse-ring {
@@ -96,4 +160,14 @@
 }
 .animate-pulse-ring {
   animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, hsl(41 66% 47% / 0.1) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }
